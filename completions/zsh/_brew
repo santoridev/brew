@@ -185,6 +185,7 @@ __brew_internal_commands() {
     'list:List all installed formulae and casks'
     'livecheck:Check for newer versions of formulae and/or casks from upstream'
     'log:Show the `git log` for formula or cask, or show the log for the Homebrew repository if no formula or cask is provided'
+    'mark:Mark or unmark formula as installed on request, or installed as dependency'
     'migrate:Migrate renamed packages to new names, where formula are old names of packages'
     'missing:Check the given formula kegs for missing dependencies'
     'nodenv-sync:Create symlinks for Homebrew'\''s installed NodeJS versions in `~/.nodenv/versions`'
@@ -1336,6 +1337,21 @@ _brew_ls() {
     - installed_cask \
     '(--formula --pinned --multiple --installed-on-request --installed-as-dependency)--cask[List only casks, or treat all named arguments as casks]' \
     '*::installed_cask:__brew_installed_casks'
+}
+
+# brew mark
+_brew_mark() {
+  _arguments \
+    '--debug[Display any debugging information]' \
+    '--help[Show this message]' \
+    '(--no-installed-as-dependency)--installed-as-dependency[Mark formula as installed as dependency]' \
+    '(--no-installed-on-request)--installed-on-request[Mark formula as installed on request]' \
+    '(--installed-as-dependency)--no-installed-as-dependency[Mark formula as not installed as dependency]' \
+    '(--installed-on-request)--no-installed-on-request[Mark formula as not installed on request]' \
+    '--quiet[Make some output more quiet]' \
+    '--verbose[Make some output more verbose]' \
+    - formula \
+    '*::formula:__brew_formulae'
 }
 
 # brew migrate

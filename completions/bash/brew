@@ -1546,6 +1546,27 @@ _brew_ls() {
   __brew_complete_installed_casks
 }
 
+_brew_mark() {
+  local cur="${COMP_WORDS[COMP_CWORD]}"
+  case "${cur}" in
+    -*)
+      __brewcomp "
+      --debug
+      --help
+      --installed-as-dependency
+      --installed-on-request
+      --no-installed-as-dependency
+      --no-installed-on-request
+      --quiet
+      --verbose
+      "
+      return
+      ;;
+    *) ;;
+  esac
+  __brew_complete_formulae
+}
+
 _brew_migrate() {
   local cur="${COMP_WORDS[COMP_CWORD]}"
   case "${cur}" in
@@ -2740,6 +2761,7 @@ _brew() {
     ln) _brew_ln ;;
     log) _brew_log ;;
     ls) _brew_ls ;;
+    mark) _brew_mark ;;
     migrate) _brew_migrate ;;
     missing) _brew_missing ;;
     nodenv-sync) _brew_nodenv_sync ;;

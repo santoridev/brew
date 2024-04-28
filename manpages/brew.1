@@ -512,6 +512,20 @@ Treat all named arguments as formulae\.
 .TP
 \fB\-\-cask\fP
 Treat all named arguments as casks\.
+.SS "\fBmark\fP \fR[\fIoptions\fP] \fIformula\fP \fR[\.\.\.]"
+Mark or unmark \fIformula\fP as installed on request, or installed as dependency\. This can be useful if you want to control whether an installed formula should be removed by \fBbrew autoremove\fP\&\.
+.TP
+\fB\-\-installed\-on\-request\fP
+Mark \fIformula\fP as installed on request\.
+.TP
+\fB\-\-no\-installed\-on\-request\fP
+Mark \fIformula\fP as not installed on request\.
+.TP
+\fB\-\-installed\-as\-dependency\fP
+Mark \fIformula\fP as installed as dependency\.
+.TP
+\fB\-\-no\-installed\-as\-dependency\fP
+Mark \fIformula\fP as not installed as dependency\.
 .SS "\fBmigrate\fP \fR[\fIoptions\fP] \fIinstalled_formula\fP|\fIinstalled_cask\fP \fR[\.\.\.]"
 Migrate renamed packages to new names, where \fIformula\fP are old names of packages\.
 .TP

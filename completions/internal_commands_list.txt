@@ -62,6 +62,7 @@ livecheck
 ln
 log
 ls
+mark
 migrate
 missing
 nodenv-sync

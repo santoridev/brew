@@ -185,13 +185,23 @@ RSpec.shared_context "integration test" do # rubocop:disable RSpec/ContextWordin
     end
   end
 
-  def install_test_formula(name, content = nil, build_bottle: false)
+  def install_test_formula(name, content = nil, build_bottle: false,
+                           tab_attributes: nil)
     setup_test_formula(name, content)
     fi = FormulaInstaller.new(Formula[name], build_bottle:)
     fi.prelude
     fi.fetch
     fi.install
     fi.finish
+
+    return if tab_attributes.nil?
+
+    tab = Tab.for_name(name)
+    tab_attributes.each do |key, value|
+      tab.instance_variable_set(:"@#{key}", value)
+    end
+    tab.write
+    nil
   end
 
   def setup_test_tap

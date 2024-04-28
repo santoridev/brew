@@ -814,6 +814,28 @@ repository if no formula or cask is provided.
 
 : Treat all named arguments as casks.
 
+### `mark` \[*`options`*\] *`formula`* \[...\]
+
+Mark or unmark *`formula`* as installed on request, or installed as dependency.
+This can be useful if you want to control whether an installed formula should be
+removed by `brew autoremove`.
+
+`--installed-on-request`
+
+: Mark *`formula`* as installed on request.
+
+`--no-installed-on-request`
+
+: Mark *`formula`* as not installed on request.
+
+`--installed-as-dependency`
+
+: Mark *`formula`* as installed as dependency.
+
+`--no-installed-as-dependency`
+
+: Mark *`formula`* as not installed as dependency.
+
 ### `migrate` \[*`options`*\] *`installed_formula`*\|*`installed_cask`* \[...\]
 
 Migrate renamed packages to new names, where *`formula`* are old names of

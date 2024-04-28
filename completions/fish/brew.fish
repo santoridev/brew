@@ -1080,6 +1080,18 @@ __fish_brew_complete_arg 'ls; and not __fish_seen_argument -l cask -l casks' -a 
 __fish_brew_complete_arg 'ls; and not __fish_seen_argument -l formula -l formulae' -a '(__fish_brew_suggest_casks_installed)'
 
 
+__fish_brew_complete_cmd 'mark' 'Mark or unmark formula as installed on request, or installed as dependency'
+__fish_brew_complete_arg 'mark' -l debug -d 'Display any debugging information'
+__fish_brew_complete_arg 'mark' -l help -d 'Show this message'
+__fish_brew_complete_arg 'mark' -l installed-as-dependency -d 'Mark formula as installed as dependency'
+__fish_brew_complete_arg 'mark' -l installed-on-request -d 'Mark formula as installed on request'
+__fish_brew_complete_arg 'mark' -l no-installed-as-dependency -d 'Mark formula as not installed as dependency'
+__fish_brew_complete_arg 'mark' -l no-installed-on-request -d 'Mark formula as not installed on request'
+__fish_brew_complete_arg 'mark' -l quiet -d 'Make some output more quiet'
+__fish_brew_complete_arg 'mark' -l verbose -d 'Make some output more verbose'
+__fish_brew_complete_arg 'mark' -a '(__fish_brew_suggest_formulae_all)'
+
+
 __fish_brew_complete_cmd 'migrate' 'Migrate renamed packages to new names, where formula are old names of packages'
 __fish_brew_complete_arg 'migrate' -l cask -d 'Only migrate casks'
 __fish_brew_complete_arg 'migrate' -l debug -d 'Display any debugging information'
